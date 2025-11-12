@@ -383,7 +383,9 @@
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
-              "isPublicNetwork": false
+              "isPublicNetwork": false,
+              "handlesCardPayment": null,
+              "isWebApplication": null
             }
           },
           {
@@ -504,8 +506,8 @@
           },
           {
             "position": {
-              "x": 571,
-              "y": 266
+              "x": 330,
+              "y": 290
             },
             "size": {
               "width": 120,
@@ -1229,62 +1231,6 @@
             "zIndex": 10,
             "connector": "smooth",
             "data": {
-              "type": "tm.Flow",
-              "name": "5. OTT",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Alternative C"
-                  }
-                },
-                "position": 0.5
-              }
-            ],
-            "id": "48acb78a-9180-4346-b3ae-8f364cc7d9a5",
-            "source": {
-              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
-            },
-            "target": {
-              "cell": "166a4763-016a-486b-92df-a86adc8bab82"
-            },
-            "vertices": [
-              {
-                "x": 910,
-                "y": 500
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
               "type": "tm.Boundary",
               "name": "Firma Allsecure",
               "description": "",
@@ -1321,6 +1267,10 @@
             "vertices": [
               {
                 "x": 799,
+                "y": 672
+              },
+              {
+                "x": 590,
                 "y": 672
               },
               {
@@ -1448,64 +1398,6 @@
             ]
           },
           {
-            "shape": "trust-broundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Externer Service für\nden Versand des OTT",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Telefonanbieter"
-                  }
-                },
-                "position": {
-                  "distance": 0.1607609674711048,
-                  "offset": 15.4290577443574
-                }
-              }
-            ],
-            "id": "5d5f2170-50ee-404a-99f3-b55e2f657730",
-            "source": {
-              "x": 540,
-              "y": 259
-            },
-            "target": {
-              "x": 539,
-              "y": 259
-            },
-            "vertices": [
-              {
-                "x": 460,
-                "y": 259
-              },
-              {
-                "x": 390,
-                "y": 305
-              },
-              {
-                "x": 420,
-                "y": 394
-              },
-              {
-                "x": 685,
-                "y": 394
-              },
-              {
-                "x": 710,
-                "y": 266
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1598,8 +1490,8 @@
             },
             "vertices": [
               {
-                "x": 560,
-                "y": 465
+                "x": 300,
+                "y": 490
               }
             ]
           },
@@ -1771,6 +1663,240 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Einzige Möglichkeit",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Einzige Möglichkeit"
+            ],
+            "id": "48b257f0-f350-497e-887a-59b3e1485d71",
+            "source": {
+              "x": 673,
+              "y": 371
+            },
+            "target": {
+              "cell": "166a4763-016a-486b-92df-a86adc8bab82",
+              "port": "aa0a7d5f-7c5b-4377-878a-823d9fb1ea48"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Benutzt Standard Software",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Benutzt Standard Software"
+            ],
+            "id": "0f7dce96-4e46-479f-9b85-71d972e4f150",
+            "source": {
+              "x": 230,
+              "y": -170
+            },
+            "target": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
+              "port": "1e35d800-51dc-48d2-8ab4-7ae845478829"
+            },
+            "vertices": [
+              {
+                "x": 260,
+                "y": -150
+              },
+              {
+                "x": 310,
+                "y": -70
+              },
+              {
+                "x": 470,
+                "y": -40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Überwacht",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Überwacht"
+            ],
+            "id": "4495b897-b51e-49b9-8ffd-7331691b26d7",
+            "source": {
+              "x": 890,
+              "y": 300
+            },
+            "target": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
+              "port": "831ba275-120b-4c4f-9744-ef00c0d70976"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Überwacht",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Überwacht"
+            ],
+            "id": "9cf1d852-4b7d-4857-93b0-54527aee3a34",
+            "source": {
+              "x": 975,
+              "y": 360
+            },
+            "target": {
+              "cell": "166a4763-016a-486b-92df-a86adc8bab82",
+              "port": "a1381660-e580-4996-813f-f15403602f05"
+            }
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Krypto Libraries",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Krypto Libraries"
+            ],
+            "id": "d0e1faf5-e4b8-4bfd-8fdb-7f79118e3b83",
+            "source": {
+              "x": 30,
+              "y": -240
+            },
+            "target": {
+              "x": 30,
+              "y": -240
+            },
+            "vertices": [
+              {
+                "x": 260,
+                "y": -240
+              },
+              {
+                "x": 260,
+                "y": -120
+              },
+              {
+                "x": 50,
+                "y": -100
+              }
+            ]
+          },
+          {
             "position": {
               "x": 410,
               "y": -174
@@ -1894,8 +2020,8 @@
           },
           {
             "position": {
-              "x": 421,
-              "y": 311
+              "x": 160,
+              "y": 326
             },
             "size": {
               "width": 120,
@@ -2147,28 +2273,18 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Externer Service für\nden Versand des OTT",
+              "name": "Interner Service für\nden Versand des OTT",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
             },
             "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Externer Service für\nden Versand des OTT"
-                  }
-                },
-                "position": {
-                  "distance": 0.9492856006424079,
-                  "offset": -6.1135161076058475
-                }
-              }
+              "Interner Service für\nden Versand des OTT"
             ],
             "id": "7a4ae9f7-9dfd-4347-9730-472a9171c620",
             "source": {
-              "x": 1231,
-              "y": 428
+              "x": 1170,
+              "y": 590
             },
             "target": {
               "x": 1170,
@@ -2194,6 +2310,291 @@
               {
                 "x": 1170,
                 "y": 700
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 50,
+              "y": -209.99999999999997
+            },
+            "size": {
+              "width": 170,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Krypto Standard \nSoftware Anbieter"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "68bc0744-b8c5-4c06-97dc-b22d9f197d3a"
+                },
+                {
+                  "group": "right",
+                  "id": "0822483f-86c9-4039-8c19-d1cb8607885e"
+                },
+                {
+                  "group": "bottom",
+                  "id": "704a7e84-ebe9-4ace-9a87-123afad02fbe"
+                },
+                {
+                  "group": "left",
+                  "id": "e3bfb699-465e-47b4-9d43-2201c2bb7aea"
+                }
+              ]
+            },
+            "id": "f615cb55-10c3-48c2-bac8-207082e5beb1",
+            "zIndex": 15,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Krypto Standard \nSoftware Anbieter",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 890,
+              "y": 240.0000000000001
+            },
+            "size": {
+              "width": 140,
+              "height": 120
+            },
+            "attrs": {
+              "text": {
+                "text": "SIEM-System"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "9d856491-5c8a-4502-8d8b-f256265c3b31"
+                },
+                {
+                  "group": "right",
+                  "id": "e6e826ca-eade-45f7-b0b1-9aa9c24a912b"
+                },
+                {
+                  "group": "bottom",
+                  "id": "ae0b9bd6-2017-4845-b1ec-7837786e3953"
+                },
+                {
+                  "group": "left",
+                  "id": "e111ffd5-acfc-44af-8426-3e510930c6ea"
+                }
+              ]
+            },
+            "id": "5e605eff-5423-4086-912b-3e2edaf62750",
+            "zIndex": 16,
+            "data": {
+              "type": "tm.Process",
+              "name": "SIEM-System",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 17,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Trust Boundary"
+            ],
+            "id": "6cf3bfc1-d596-4d95-9ae9-bd4e60cdfb8d",
+            "source": {
+              "x": 136,
+              "y": 230
+            },
+            "target": {
+              "x": 80,
+              "y": 450
+            },
+            "vertices": [
+              {
+                "x": 200,
+                "y": 310
+              },
+              {
+                "x": 450,
+                "y": 260
+              },
+              {
+                "x": 410,
+                "y": 520
+              },
+              {
+                "x": 290,
+                "y": 550
+              },
+              {
+                "x": 110,
+                "y": 450
               }
             ]
           }
