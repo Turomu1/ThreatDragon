@@ -3188,7 +3188,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Tampering",
-                  "description": "Kurz: Ein Angreifer mit niedrigem bis mittlerem Zugriff (z. B. gestohlenes Dienstkonto oder unsichere Server-Dateirechte) ändert lokal Konfigurationsdateien des OTT-Service oder der Kryptosoftware, sodass Nachrichtenumleitungen, Debug-Mode oder schwächere Einstellungen aktiviert werden.\nCAPEC-75: Manipulating Writeable Configuration Files\n",
+                  "description": "Ein Angreifer mit niedrigem bis mittlerem Zugriff (z. B. gestohlenes Dienstkonto oder unsichere Server-Dateirechte) ändert lokal Konfigurationsdateien des OTT-Service oder der Kryptosoftware, sodass Nachrichtenumleitungen, Debug-Mode oder schwächere Einstellungen aktiviert werden.\nCAPEC-75: Manipulating Writeable Configuration Files\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -3198,19 +3198,12 @@
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -3237,6 +3230,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 23,
             "ports": {
               "groups": {
                 "top": {
@@ -3320,7 +3314,6 @@
               ]
             },
             "id": "dbb16ced-86ab-4c02-bd9b-fa426d22a8bd",
-            "zIndex": 23,
             "data": {
               "type": "tm.Store",
               "name": "Keystore",
