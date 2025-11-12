@@ -20,6 +20,39 @@
         "cells": [
           {
             "position": {
+              "x": 239.99999999999818,
+              "y": -209.99999999999795
+            },
+            "size": {
+              "width": 480,
+              "height": 720
+            },
+            "attrs": {
+              "label": {
+                "text": "Firma Allsecure"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "8465b088-67df-4999-a9a6-4a2928fe8868",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Firma Allsecure",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
+          },
+          {
+            "position": {
               "x": 12,
               "y": 53
             },
@@ -1322,17 +1355,7 @@
             "target": {
               "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
             },
-            "vertices": [],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1807,64 +1830,6 @@
               {
                 "x": 430,
                 "y": 430
-              }
-            ]
-          },
-          {
-            "shape": "trust-broundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Externer Service für T\nelefonnummernauflö\nsung",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Firma Allsecure"
-                  }
-                },
-                "position": {
-                  "distance": 0,
-                  "offset": 25.336937022630487
-                }
-              }
-            ],
-            "id": "8c690a8a-f100-4c4d-bd88-095a530ac220",
-            "source": {
-              "x": 241,
-              "y": 135
-            },
-            "target": {
-              "x": 246,
-              "y": 138
-            },
-            "vertices": [
-              {
-                "x": 623,
-                "y": 156
-              },
-              {
-                "x": 638,
-                "y": -46
-              },
-              {
-                "x": 550,
-                "y": -204
-              },
-              {
-                "x": 340,
-                "y": -174
-              },
-              {
-                "x": 243,
-                "y": -8
               }
             ]
           },
