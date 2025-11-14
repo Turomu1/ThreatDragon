@@ -149,8 +149,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -264,18 +264,18 @@
                 {
                   "id": "ebf1a0e4-73b9-499b-9e4d-dfeed1eee37c",
                   "title": "HTTP Flooding",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Low",
                   "type": "Denial of service",
-                  "description": "Ein Angreifer flutet das Loginsystem mit HTTP Anfragen, sodass das System keine Nutzeranfragen bearbeiten kann.\nCAPEC-125: Flooding\nT1498.001: Network Denial of Service: Direct Network Flood ",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer flutet das Loginsystem mit HTTP Anfragen, sodass das System keine Nutzeranfragen bearbeiten kann.\nCAPEC-125: Flooding\nT1498.001: Network Denial of Service: Direct Network Flood \n\nD: 8 (Unternehmen kann nicht weiterarbeiten ohne mögliche Kundenlogins)\nR: 10 (Kann extrem einfach zu jeder Zeit durchgeführt werden)\nE: 7 (Legt System lahm aber führt nicht zu anderen Exploits)\nA: 9 (Nur externe User kommen nicht ins System)\n\nGesamt: 34",
+                  "mitigation": "Firewall mit IDS (wehrt ungültige Anfragen ab und sperrt IPs die zu viele Anfragen schicken)\nD3-DNSDL: DNS Denylisting\n\nD: 1 (Könnte mit sehr viel Arbeit umgangen werden aber sehr schwer + IDS schmeißt raus)\nR: 2 (Kann nicht mehr wirklich gemacht werden nur mit übermäßigem Aufwand)\nE: 2 (Eigentlich Begründung wie oben)\nA: 2 (FALLS ein Angriff gelingt sind nur die Users die sich zwischen Angriffsstart und IDS Maßnahmen einloggen wollen betroffen)\n\nGesamt: 7",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 105,
-                  "score": ""
+                  "score": "7"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": null,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
@@ -284,7 +284,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 1,
+                "denialOfService": 3,
                 "elevationOfPrivilege": 0
               }
             }
@@ -800,8 +800,8 @@
                 "text": "Allsecure \nMobile Phone \nOTT Service"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -902,31 +902,33 @@
                 {
                   "id": "909b729a-eee4-46b5-8743-23b21e054e89",
                   "title": "Telefonnummer Spoofing",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Low",
                   "type": "Spoofing",
-                  "description": "Ein Angreifer kann durch Telefonnummer Spoofing die OTT von Nutzern abfangen.\nCAPEC-151: Identity Spoofing\nT1111: Multi-Factor Authentication Interception",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer kann durch Telefonnummer Spoofing die OTT von Nutzern abfangen. Zusammen mit Benutzername und Passwort wäre eine Accountübernahme möglich.\nCAPEC-151: Identity Spoofing\nT1111: Multi-Factor Authentication Interception\n\nD: 8 (FInanzielle Verluste durch Vertrauensverlust, Accountübernahme möglich)\nR: 4 (Man muss erstmal die Telefonnummer wissen und in dem Moment wo der Code geschickt wird auch die richtige gespooft haben)\nE: 5 (ist nicht leicht auszuführen. Man braucht erstmal einige Vorraussetzungen)\nA: 10 (Alle User des Service wären theoretisch betroffen)\nGesamt: 27 ",
+                  "mitigation": "OTT nur verschickt an Kombination von Telefonnummer und Device-ID. Dadurch kann man OTT nur empfangen, wenn man ein bereits registriertes Gerät besitzt.\nD3-TB: Token Binding\n\n\nD: 4 (Immer noch möglich aber deutlich schwieriger durch Besitz von Endgerät)\nR: 2 (Nicht wirklich machbar, da Zugang zum Endgerät nötig)\nE: 1 (Telefondiebstahl + Telefonnummerspoofing nötig)\nA: 2 (Nur Nutzer deren Gerät gestohlen wurde betroffen)\nGesamt: 9",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 111,
-                  "score": ""
+                  "score": "9"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
               "isWebApplication": null,
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 4,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
-              }
+              },
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null
             }
           },
           {
@@ -2224,13 +2226,11 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -2330,28 +2330,36 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "06c7f970-b125-4725-8267-088fb9e39008",
                   "title": "Log-Manipulation",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Low",
                   "type": "Repudiation",
-                  "description": "Ein Angreifer mit Schreibrechten kann Log Dateien editieren oder löschen um Spuren zu verwischen.\nCAPEC-268: Audit Log Manipulation\nT1070: Indicator Removal ",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer mit Schreibrechten kann Log Dateien editieren oder löschen um Spuren zu verwischen.\nCAPEC-268: Audit Log Manipulation\nT1070: Indicator Removal \n\nD: 8 (Angreifer kann dadurch Angriffe vertuschen und persistent im System lauern)\nR: 10 (Kann alle Spuren, dass er im System ist löschen damit ewig im System bleiben)\nE: 5 (Angreifer muss erstmal durch das Login System ins System kommen)\nA: 3 (Nur Firma aber keine User wirklich betroffen)\n\nGesamt: 26",
+                  "mitigation": "Passwort + internes Netzwerk + 2. Faktor + Timeout\nD3-LAMED: LAN Access Mediation\n\n\nD: 8 (Falls er es schafft ist die Damage unverändert)\nR: 1 (Muss immer wieder durch den Timeout ins System kommen)\nE: 1 (Unnormal schwer)\nA: 3 (Selbe wie oben)\n\nGesamt: 13",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 103,
-                  "score": ""
+                  "score": "13"
                 }
               ],
               "threatFrequency": {
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 4,
                 "informationDisclosure": 0,
                 "denialOfService": 0
-              }
+              },
+              "storesInventory": null
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -2368,13 +2376,11 @@
                 "text": "Telefonnummern-DB"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -2474,28 +2480,29 @@
               "storesCredentials": false,
               "isEncrypted": false,
               "isSigned": false,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "72b85b61-3939-499f-bbb2-e22ca2d515fe",
                   "title": "SQL-Injection",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Ein Angreifer kann durch SQL-Injection alle Einträge der Datenbank ausgeben lassen.\nCAPEC-66: SQL Injection\nT1530: Data from Cloud Storage",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer kann durch SQL-Injection alle Einträge der Datenbank ausgeben lassen.\nCAPEC-66: SQL Injection\nT1530: Data from Cloud Storage\n\nD: 8 (Datenleak + möglicher Identitätsdiebstahl)\nR: 8 (SQL Injection sehr leicht reproduzierbar)\nE: 8 (Eigentlich 10 aber man muss wissen welche Tabelle man auslesen will)\nA: 10 (Alle Einträge der Datenbank auslesbar)\n\nGesamt: 34",
+                  "mitigation": "Whitelisting + Prepared Statements (nur bestimmte Eingaben möglich, Sachen werden escaped)\nV1.2 Injection Prevention (OWASP ASVS)\n\nD: 8 (Bleibt gleich)\nR: 1 (Gibt bestimmt noch ne möglichkeit reinzukommen)\nE: 1 (siehe R)\nA: 10 (Alle)\n\nGesamt: 20 \n\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
-                  "score": ""
+                  "score": "20"
                 }
               ],
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 3,
                 "denialOfService": 0
-              }
+              },
+              "storesInventory": null
             }
           },
           {
@@ -2930,8 +2937,8 @@
                 "text": "Management"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3028,25 +3035,11 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": [
-                {
-                  "id": "1fc621c7-ff63-479a-8f1d-17f1a34e1e21",
-                  "title": "IP-Spoofing",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Spoofing",
-                  "description": "Ein Angreifer spooft die IP-Adresse des Managements und fängt so die SIEM E-Mails ab.\nCAPEC-151: Identity Spoofing",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 110,
-                  "score": ""
-                }
-              ],
+              "threats": [],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 0,
                 "repudiation": 0
               }
             }
@@ -3065,8 +3058,8 @@
                 "text": "Kryptosoftware"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3163,7 +3156,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -3172,37 +3165,24 @@
                 {
                   "id": "2a9609a6-b242-4c8d-967d-58d9daeb9c0f",
                   "title": "Buffer Overflow",
-                  "status": "Open",
-                  "severity": "TBD",
+                  "status": "Mitigated",
+                  "severity": "Medium",
                   "type": "Elevation of privilege",
-                  "description": "Ein Angreifer kann einen Fehler in den nativen Bibliotheken der Kryptosoftware nutzen um durch einen Buffer Overflow höhere Rechte zu erhalten. Dadurch kann er beispielsweise Keys oder Config Dateien auslesen.\nCAPEC-100: Overflow Buffers\nT1068: Exploitation for Privilege Escalation\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Ein Angreifer kann einen Fehler in den nativen Bibliotheken der Kryptosoftware nutzen um durch einen Buffer Overflow höhere Rechte zu erhalten. Dadurch kann er beispielsweise Keys oder Config Dateien auslesen.\nCAPEC-100: Overflow Buffers\nT1068: Exploitation for Privilege Escalation\n\nD: 10 (Wenn Krypto Keys ausgelesen werden können ist alles over)\nR: 5 (Nicht sonderlich leicht, weil in internem Netz)\nE: 5 (Wenn man im internen Netz ist einfach, sonst schwer)\nA: 10  (ALLE betroffen)\n\nGesamt: 30 \n",
+                  "mitigation": "Sprache benutzen die keine Buffer Overflows zulässt.\nD3-TL: Trusted Library\n\n\nD: 10 (Damage unverändert)\nR: 0 (Gar nicht möglich)\nE: 0 (Gar nicht möglich)\nA: 10 (ALLE)\n\nGesamt: 20 ",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 106,
-                  "score": ""
-                },
-                {
-                  "id": "00737a8b-f8ef-49c2-935a-c0b6e5bbf281",
-                  "title": "Configs verändern",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Ein Angreifer mit niedrigem bis mittlerem Zugriff (z. B. gestohlenes Dienstkonto oder unsichere Server-Dateirechte) ändert lokal Konfigurationsdateien des OTT-Service oder der Kryptosoftware, sodass Nachrichtenumleitungen, Debug-Mode oder schwächere Einstellungen aktiviert werden.\nCAPEC-75: Manipulating Writeable Configuration Files\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 109,
-                  "score": ""
+                  "score": "20"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 3,
+                "tampering": 2,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
+                "elevationOfPrivilege": 3
               }
             }
           },
@@ -3327,9 +3307,23 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": [],
+              "threats": [
+                {
+                  "id": "546fa196-f2e3-4af9-8d64-b73b1527e354",
+                  "title": "Key Tampering",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Der Angreifer verändert die Keys und dadurch hat das Management keinen Zugriff mehr auf die Log Dateien und bekommt Angriffe nicht mehr mit.\nT1565: Data Manipulation\nCAPEC-129: Pointer Manipulation\n\nD: 10 (Der Angreifer kann alles mitlesen und daduch auch das ganze System lahmlegen)\nR: 10 (Wenn der einmal seinen Key hinterlegt und aktiviert hat kann er theoretisch alles machen)\nE: 3 (Man muss erstmal in das gut getestete System reinkommen, eher schwer)\nA: 3 (Erstmal nur das Management betroffen)\n\nGesamt: 26",
+                  "mitigation": "Keystore nur über internes Netz verfügbar machen.\nD3-NRAM: Network Resource Access Mediation\n\n\nD: 4 (Schaden immer noch verheerend aber schwerer ins System zu kommen)\nR: 6 (Von Malicious Insiders immer noch umsetzbar)\nE: 1 (Gleiches Prinzip wie vorher aber nur noch intern)\nA: 3 (Immer noch Management betroffen)\n\nGesamt: 14",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 113,
+                  "score": "14"
+                }
+              ],
               "threatFrequency": {
-                "tampering": 0,
+                "tampering": 2,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
@@ -3346,7 +3340,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 112
+    "threatTop": 113
   },
   "version": "2.5.0"
 }
